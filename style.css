@@ -1,294 +1,204 @@
-@import url('https://fonts.googleapis.com/css?family=Nova+Mono');
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:300');
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:500');
+/* ---- Reset & Base ---- */
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
 html {
-    font-size: 15px;
-}
-@media only screen and (max-width: 450px){
-  html {
-    font-size: 12px;
-  }
+	scroll-behavior: smooth;
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	line-height: 1;
-	background-color:#007a99;
-	height: 100%;
-	overflow: auto;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-@media only screen and (max-width: 450px){
-  body {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
+	font-family: 'Barlow', sans-serif;
+	color: #105676;
+	line-height: 1.6;
+	background-color: #f9f9f9;
 }
 
-.topbar{
-  position: fixed;
-  top: 0;
-  width: calc(100% - 60px);
-	z-index: 1;
-	font-family: 'Nova Mono';
-	background-color: #9bffee;
-}
-@media only screen and (max-width: 450px){
-  .topbar {
-    width: calc(100% - 10px);
-  }
+a {
+	color: #105676;
+	text-decoration: none;
 }
 
-.sub-topbar{
-  position: relative;
-  top: 0;
-	z-index: 2;
-  padding: 5px;
-	font-family: 'Nova Mono';
-  font-size: 2rem;
-  text-align: center;
-  background-color: #9bffee;
-  color: #007a99;
-}
-@media only screen and (max-width: 450px){
-  .sub-topbar {
-    width: calc(100% - 10px);
-  }
+a:hover, a:focus {
+	text-decoration: underline;
+	color: #d8ff00;
 }
 
-.top-spacer{
-  position: relative;
-  top: 0;
-  margin-bottom: 50px;
-}
-
-#title{
-	float: left;
-  margin-left: 20px;
-  margin-top: 8px;
-	margin-bottom: 8px;
-  font-size: 2.5rem;
-	color: #007a99;
-}
-
-#menu-container{
-	display: table;
-	float: right;
-	/* height: 50px; */
-	margin-right: 5px;
-  margin-top: 9px;
-}
-
-#menu{
-	display:table-cell;
-	vertical-align: top;
-  font-family: 'Nova Mono';
-  font-size: 2vw;
-}
-@media screen and (min-width: 1000px) {
-  #menu {
-     font-size: 20px;
-  }
-}
-
-.active{
-	color: #9bffee;
-	background-color: #007a99;
-	padding: 0px 5px 0px 5px;
-}
-.inactive{
-	color: #007a99;
-	padding: 0px 5px 0px 5px;
-}
-.inactive:hover{
-	color: #EEE;
-	background-color: #007a99;
-}
-
-#bio-container{
-	margin-top: 50px;
-  margin-bottom: 5px;
-	padding: 15px 20px 15px 20px;
-	font-family: 'Work Sans';
-	font-weight: 300;
-	font-size: 1rem;
-	line-height: 130%;
-	text-align: justify;
-	color: #007a99;
-	background-color: #9bffee;
-}
-@media screen and (max-width: 450px) {
-	#bio-container {
-		margin-top: 40px;
-	}
-}
-
-.grid {
-	margin-top: 0;
-	margin-bottom: 0;
-	display: inline-grid;
-	grid-gap: 5px;
-	grid-template-columns: repeat(auto-fill, minmax(370px,1fr));
-	grid-auto-rows: 20px;
-}
-@media only screen and (max-width: 450px){
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
-  }
-}
-
-.work-container{
-	color: #007a99;
-	background-color: #9bffee;
-}
-
-#work-image{
-	width:100%;
-}
-
-.videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-}
-
-.videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-#work-title{
-	position: relative;
-	font-family: 'Nova Mono';
-	font-size: 1.6rem;
-	padding: 10px;
-	padding-left: 20px;
-	padding-top: 20px;
-}
-
-#page-title{
-  position: relative;
-  font-family: 'Nova Mono';
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-  padding: 10px;
-  padding-left: 15px;
-  padding-top: 15px;
-  text-align: center;
-  border-color: #9bffee;
-  border: 12px;
-  border-width: thick;
-  border-style: solid;
-  color: #9bffee;
-}
-
-#work-description-container{
-	position: relative;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-bottom: 15px;
-	font-family: 'Work Sans';
-	font-weight: 300;
-	font-size: 1rem;
-	line-height: 130%;
-}
-
-.sub-work-container{
-  margin-top: 5px;
-  overflow-x: hidden;
-	color: #007a99;
-  display: flex;
-  flex-direction: row;
-}
-@media screen and (max-width: 450px) {
-	.sub-work-container {
-		flex-direction: column;
-	}
-}
-
-#sub-work-image{
-  position: relative;
-  float: left;
-	width: 50%;
-  z-index: 1;
-}
-@media screen and (max-width: 450px) {
-	#sub-work-image {
-		width: 100%;
-	}
-}
-
-#sub-work-description-container{
-	position: relative;
-  float: right;
-  box-sizing: border-box;
-  padding-top: 20px;
-  padding-left: 20px;
-	padding-right: 20px;
-	padding-bottom: 15px;
-	font-family: 'Work Sans';
-	font-weight: 300;
-	font-size: 1rem;
-	line-height: 130%;
-  width: 50%;
-  background-color: #9bffee;
-}
-@media screen and (max-width: 450px) {
-	#sub-work-description-container {
-		width: 100%;
-	}
-}
-
-#contactDetails{
-	position:relative;
-	float:left;
-	width: calc(100% - 90px);
-	overflow: hidden;
-	padding:10px;
-	padding-left:20px;
-	margin:30px;
-	margin-top: 20px;
-	margin-bottom:0;
-	color: #9bffee;
-	background-color: #007a99;
-	opacity:0.75;
-	font-family: 'Work Sans';
-	font-weight: 300;
-	font-size: 0.8rem;
+/* ---- Header ---- */
+header {
+	background-color: #105676;
+	color: #fff;
 	text-align: center;
+	padding: 1.5rem 1rem;
 }
 
-a{
-  font-weight: 500;
-  text-decoration: none;
-	color: #007a99;
-}
-a:hover {
-	color: #9bffee;
-	background-color: #007a99;
+header h1 {
+	font-size: 2rem;
 }
 
-a.sub{
-  font-weight: 300;
-  text-decoration: none;
-  color: #9bffee;
-
+/* ---- Hero Section (Cover + Welcome) ---- */
+.hero {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	max-width: 1100px;
+	margin: 3rem auto;
+	padding: 0 2rem;
+	gap: 3rem;
 }
-a.sub:hover {
-	color: #007a99;
-	background-color: #9bffee;
+
+.hero-cover {
+	flex: 1 1 300px;
+	max-width: 400px;
 }
 
-p{
-	line-height: 0;
+.hero-cover img {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-text {
+	flex: 1 1 400px;
+}
+
+.hero-text h2 {
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+	color: #105676;
+}
+
+.hero-text p {
+	font-size: 1.05rem;
+	margin-bottom: 1.5rem;
+}
+
+/* ---- Chapter Links (inside hero-text) ---- */
+.chapter-links {
+	list-style: none;
+	padding: 0;
+}
+
+.chapter-links li {
+	margin-bottom: 0.75rem;
+}
+
+.chapter-links a {
+	display: inline-block;
+	padding: 0.6rem 1.2rem;
+	background-color: #105676;
+	color: #fff;
+	border-radius: 10px;
+	font-weight: 500;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.chapter-links a:hover,
+.chapter-links a:focus {
+	background-color: #0d4560;
+	text-decoration: none;
+	color: #d8ff00;
+}
+
+/* ---- Divider ---- */
+.divider {
+	max-width: 1100px;
+	margin: 2rem auto;
+	border: none;
+	border-top: 2px solid #ddd;
+}
+
+/* ---- Chapter Sections ---- */
+.chapter-section {
+	max-width: 1100px;
+	margin: 3rem auto;
+	padding: 2rem;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+	scroll-margin-top: 2rem;
+}
+
+.chapter-section h3 {
+	font-size: 1.5rem;
+	color: #105676;
+	margin-bottom: 0.75rem;
+}
+
+.chapter-section p {
+	margin-bottom: 1rem;
+	font-size: 1rem;
+}
+
+.download-btn {
+	display: inline-block;
+	padding: 0.6rem 1.4rem;
+	background-color: #d8ff00;
+	color: #105676;
+	font-weight: 500;
+	border-radius: 10px;
+	transition: background-color 0.3s ease;
+}
+
+.download-btn:hover,
+.download-btn:focus {
+	background-color: #0d4560;
+	text-decoration: none;
+}
+
+/* ---- Back-to-top link ---- */
+.back-to-top {
+	display: inline-block;
+	margin-top: 1rem;
+	font-size: 0.9rem;
+}
+
+/* ---- Footer ---- */
+footer {
+	text-align: center;
+	padding: 2rem 1rem;
+	background-color: #105676;
+	color: #fff;
+	margin-top: 4rem;
+	font-size: 0.9rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 700px) {
+	.hero {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.hero-cover {
+		max-width: 260px;
+		margin: 0 auto;
+	}
+}
+
+.hero-text h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 4rem;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 0.1rem;
+    line-height: 1.1;
+}
+
+.hero-text h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 200;
+    font-style: normal;
+    margin-bottom: 0.2rem;
+}
+
+.hero-text h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1.5rem;
 }
