@@ -26,6 +26,16 @@ a:hover, a:focus {
 	color: #d8ff00;
 }
 
+.inline-link{
+	text-decoration: underline;
+}
+
+.inline-link:hover{
+	text-decoration: underline;
+	color: #105676;
+	text-decoration-thickness: 3px;
+}
+
 /* ---- Header ---- */
 header {
 	background-color: #105676;
